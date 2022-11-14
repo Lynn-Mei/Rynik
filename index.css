@@ -1,0 +1,52 @@
+html,body
+{
+	background-image: url("http://localhost:345/Valkiryn2/Valkiryn/images/night.jpg");
+	height: 100%;
+}
+
+h1
+{
+	position: relative;
+	left: 45%;
+	color: white;
+}
+
+ul
+{
+	position: relative;
+	left: 30%;
+}
+
+li
+{
+	display: inline;
+}
+
+ul a
+{
+	color: black;
+	text-decoration: none;
+	padding-left: 4em;
+	padding-bottom: 1.5em;
+	background-color: #88dfeb;
+	text-align: center;
+}
+
+ul a:hover
+{
+	color: white;
+}
+
+form
+{
+	position: relative;
+	top: 10%;
+	left:33%;
+	
+	width: 30%;
+}
+
+fieldset
+{
+	background-color: rgba(255, 255, 255, .5);;
+}

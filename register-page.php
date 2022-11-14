@@ -10,11 +10,7 @@ session_start();
 
 include ("head.html");
 include ("navbar.html");
-
-if(isset($_SESSION['name'])){
-	echo $_SESSION['name'];
-
-}
+include ("register-page.html");
 
 ?>
 
