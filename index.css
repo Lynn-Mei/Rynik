@@ -24,6 +24,24 @@ h1
 	z-index: 250;
 }
 
+
+
+
+
+
+form
+{
+	position: absolute;
+	top: 30%;
+	left:33%;
+	width: 30%;
+}
+
+fieldset
+{
+	background-color: rgba(255, 255, 255, .5);;
+}
+
 nav{
 	position: absolute;
 	top: 0%;
@@ -33,7 +51,9 @@ nav{
 	height: 5em;
 }
 
-ul
+
+/*nav pages*/
+#nav-pages
 {
 	position: relative;
 	left: 30%;
@@ -41,13 +61,13 @@ ul
 	height: 5em;
 }
 
-li
+#nav-pages li
 {
 	display: inline;
 	width: 5em;
 }
 
-ul a
+#nav-pages a
 {
 	color: white;
 	padding-bottom: 2em;
@@ -58,21 +78,46 @@ ul a
 	font-size: 1.5em;
 }
 
-ul a:hover
+#nav-pages a:hover
 {
-	background-color: #1b85b8;
+	background-color: white;
+	color: #5a5255;
 }
 
-form
+/* nav account details */
+#nav-account-details
 {
-	position: absolute;
-	top: 30%;
-	left:33%;
+	position: relative;
+	top: -140%;
+	left:85%;
+	height: 5em;
+}
+
+#nav-account-details li
+{
+	display: inline;
 	
-	width: 30%;
 }
 
-fieldset
+#nav-account-details img
 {
-	background-color: rgba(255, 255, 255, .5);;
+	height: 75%;
+	width: 4.5%;	
 }
+
+#nav-account-details li{
+	display: inline;
+}
+
+#nav-profile-box-div
+{
+	display: none;
+	background-color: white;
+	border: solid 1px black;
+	width:20%;
+	
+	position: absolute;
+	top: 5em;
+	right:0px;
+}
+
