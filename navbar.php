@@ -26,14 +26,29 @@
 			<img id="cog" src="images/cog.png">
 		</li>
 		<li id="profile-box">
-			<img id="profile-img" src="images/chicken.png">
+			<?php 
+				if(isset($_SESSION['pplink']))
+				{
+					if($_SESSION['pplink'] != ''){
+						echo "<img id='profile-img' src='". $_SESSION['pplink'] ."'>";
+					}
+					else{
+						echo "<img id='profile-img' src='images/chicken.png'>";
+					}
+				}else{
+					echo "<img id='profile-img' src='images/chicken.png'>";
+				}
+			
+			?>
+			
 		</li>
 	</ul>
 	<div id="nav-profile-box-div">
 		<?php
 			if(isset($_SESSION['name'])){
 				echo "<p>".$_SESSION['name']."</p>";
-				echo "<a> Your Profile </a>";
+				echo "<a href='account-page.php'> Your Profile </a>";
+
 			}else{
 				echo "<p>You are not connected</p>";
 			}

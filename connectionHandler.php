@@ -30,6 +30,7 @@
 				echo '<a href="disconnect.php">Disconnect</a>';
 				$_SESSION['name'] = $row["username"];
 				$_SESSION['rank'] = $row["rank"];
+				$_SESSION['pplink'] = $row["pplink"];
 				header("Location: index.php");
 			}
 			else{
