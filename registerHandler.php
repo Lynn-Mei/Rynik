@@ -36,6 +36,7 @@
 		if ($result==true) {
 			echo "Success";
 			$_SESSION['name'] = $_POST["username"];
+			$_SESSION['rank'] = 1;
 		} else {
 			echo "Failed to register user";
 		}

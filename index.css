@@ -1,46 +1,72 @@
 html,body
 {
-	background-image: url("http://localhost:345/Valkiryn2/Valkiryn/images/night.jpg");
+	/*background-image: url("http://localhost:345/Valkiryn2/Valkiryn/images/night.jpg");*/
+	background-color: white;
 	height: 100%;
+	overflow-x:hidden;
+	
+}
+
+main
+{
+	height: 99%;
+	margin-left:15%;
+	margin-right:15%;
+	background-color: lightgrey;
 }
 
 h1
 {
-	position: relative;
-	left: 45%;
+	position: absolute;
+	left: 5%;
+	top:0%;
 	color: white;
+	z-index: 250;
+}
+
+nav{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	background-color: #5a5255;
+	height: 5em;
 }
 
 ul
 {
 	position: relative;
 	left: 30%;
+	top: -25%;
+	height: 5em;
 }
 
 li
 {
 	display: inline;
+	width: 5em;
 }
 
 ul a
 {
-	color: black;
+	color: white;
+	padding-bottom: 2em;
 	text-decoration: none;
-	padding-left: 4em;
-	padding-bottom: 1.5em;
-	background-color: #88dfeb;
-	text-align: center;
+	padding-left: 1.7em;
+	background-color: #5a5255;
+	font-weight: bold;
+	font-size: 1.5em;
 }
 
 ul a:hover
 {
-	color: white;
+	background-color: #1b85b8;
 }
 
 form
 {
-	position: relative;
-	top: 10%;
+	position: absolute;
+	top: 30%;
 	left:33%;
 	
 	width: 30%;

@@ -18,7 +18,7 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql = "SELECT * FROM User WHERE username = '".$_GET['username']."'";
+	$sql = "SELECT * FROM User WHERE username = '".$_POST['username']."'";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
@@ -29,6 +29,8 @@
 				echo '<a href="webpage.php">HEY HEY =)</a>';
 				echo '<a href="disconnect.php">Disconnect</a>';
 				$_SESSION['name'] = $row["username"];
+				$_SESSION['rank'] = $row["rank"];
+				header("Location: index.php");
 			}
 			else{
 				echo "Wrong password";

@@ -9,10 +9,13 @@
 session_start();
 
 include ("head.html");
-include ("navbar.html");
+include ("navbar.php");
 include ("register-page.html");
 
 ?>
+<main>
+
+</main>
 
 </body>
 </html>
