@@ -12,6 +12,11 @@ class MainController{
 		$indexView->generer([]);
 	}
 	
+	public function displayNotFound():void{
+		$indexView = new View('NotFound');
+		$indexView->applyStyle('notFound');
+		$indexView->generer([]);
+	}
 }
 
 ?>

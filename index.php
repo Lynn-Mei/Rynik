@@ -5,8 +5,11 @@ $route = new MainController();
 
 if(isset($_GET['action'])){
 	$action = $_GET['action'];
-	if($action == 'add-animal'){
-		
+	if($action == 'cgu'){
+		$route->displayCGU();				
+	}
+	else{
+		$route->displayNotFound();
 	}
 }
 else{

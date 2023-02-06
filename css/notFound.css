@@ -1,0 +1,19 @@
+#notFound {
+    margin-left: 10em;
+}
+#notFound * {
+    display: inline;
+}
+#notFound h2 {
+    margin-left: 1em;
+    position: absolute;
+    top: 0px;
+}
+#notFound p {
+    margin-left: 1em;
+    position: absolute;
+    top: 5em;
+}
+#notFound img {
+    height: 10em;
+}
