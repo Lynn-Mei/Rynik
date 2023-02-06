@@ -16,13 +16,13 @@
 						{
 							echo "<li><a href='disconnect.php'>Admin board</a></li>";
 						}
-						echo "<li><a href='disconnect.php'>Log Out</a></li>";
+						echo "<li><a href='index.php?action=log-out'>Log Out</a></li>";
 
 					}
 					else
 					{
-						echo "<li><a href='login-page.php'>Login</a></li>";
-						echo "<li><a href='register-page.php'>Sign In</a></li>";
+						echo "<li><a href='index.php?action=log-in'>Login</a></li>";
+						echo "<li><a href='index.php?action=sign-in'>Sign In</a></li>";
 					}
 				?>
 				
@@ -65,7 +65,7 @@
 		</nav>
 	</header>
 	<main>
-
+		<?= $contenu; ?>
 	</main>
 </body>
 </html>
