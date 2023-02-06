@@ -1,7 +1,11 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/index.css"/>
+	<?php
+	foreach($stylesheets as $name){
+		echo "<link rel='stylesheet' href='css/".$name.".css'/>";
+	}
+	?>
 </head>
 <body>
 	<header>
