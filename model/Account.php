@@ -2,36 +2,36 @@
 
 class Account{
 
-private ?string $username;
-private ?string $hashPassword;
-private ?int $rank;
+private string $username  = "";
+private string $hashPassword = "";
+private int $rank;
 private ?string $profilPicLink;
 
 function __construct(){
 
 }
 
-public function getUsername():?string{
+public function getUsername():string{
 	return $this->username;
 }
 
-public function setUsername(?string $usname){
+public function setUsername(string $usname){
 	$this->username = $usname;
 }
 
-public function getHashPassword():?string{
+public function getHashPassword():string{
 	return $this->hashPassword;
 }
 
-public function setHashPassword(?string $hash){
+public function setHashPassword(string $hash){
 	$this->hashPassword = $hash;
 }
 
-public function getRank():?int{
+public function getRank():int{
 	return $this->rank;
 }
 
-public function setRank(?int $rk){
+public function setRank(int $rk){
 	$this->rank = $rk;
 }
 
