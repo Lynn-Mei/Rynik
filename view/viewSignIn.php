@@ -1,6 +1,6 @@
 <form method="POST" action="index.php?action=sign-in">
 
-<label for="username">Username: </label>
+<label for="username">Login: </label>
 <input type="text" name="username" />
 </br>
 <label for="email">Email adress: </label>

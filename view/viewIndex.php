@@ -1,1 +1,1 @@
-<h1>Well, hello there...</h1>
+<a href="index.php?action=log-in"><h1>Well, hello there...</h1>

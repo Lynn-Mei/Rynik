@@ -3,11 +3,12 @@
     "",
     "\\controller",
     "\\css",
-    "\\files",
+    "\\exception",
     "\\images",
     "\\js",
     "\\model",
     "\\view"
   ],
+  "SelectedNode": "\\model\\Token.php",
   "PreviewInSolutionExplorer": false
 }

@@ -16,14 +16,14 @@ if(isset($_GET['action'])){
 		else {
 			$accountRoute->displayLogIn();
 		}
-
 	}
 
 	if($action == 'sign-in'){
-		$accountRoute->displaySignIn();
-		if (isset($_POST['username'])){
-			echo "Heyhey";
-			$accountRoute->SignIn($_POST);
+		if (isset($_POST['username']) && isset($_POST['password'])){
+			$accountRoute->SignIn($_POST['username'],$_POST['email'],$_POST['password']);
+		}
+		else{
+			$accountRoute->displaySignIn();
 		}
 	}
 	if($action == 'log-out'){
