@@ -130,3 +130,7 @@ nav{
 	right:0px;
 }
 
+form {
+	position: absolute;
+	top: 20%;
+}
