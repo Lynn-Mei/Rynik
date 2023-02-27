@@ -17,7 +17,15 @@ class AccountController{
 	public function LogIn(string $login, string $password):void{
 		$indexView = new View('LogIn');
 		//si l'utilisateur n'est pas deja connecte
-		if((isset($_SESSION["token"]) && !$this->CheckTokenExists($_SESSION["token"])) || !isset($_SESSION["token"])){
+		if(isset($_SESSION["token"])){
+			$tokenManager = new TokenManager();
+			try{
+				$tokenManager->deleteToken($_SESSION['token']);
+			}
+			catch(Exception $e){
+				echo"";
+			}
+		}
 		//Si le mdp du LogIn est correcte
 		$accountManager = new AccountManager();
 		$account = $accountManager->getByID($login);
@@ -26,10 +34,8 @@ class AccountController{
 			//On retourne sur main
 			$indexView = new View('Index');
 			echo "<p class='success'>You are connected.</p>";
-		}
-		else{
+		}else{
 			echo "<p class='error'>Your password is incorrect.</p>";
-		}}else{
 			$indexView = new View('Index');
 		}
 		$indexView->generer([$this->getLoggedIn()]);
