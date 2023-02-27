@@ -33,6 +33,19 @@ class TokenManager extends Model
 		return True;
 	}
 	
+	public function getAccountName(string $token):string{
+		$q = $this->execRequest('SELECT * FROM session WHERE Token=?', [$token]);
+		$donnees = $q->fetch(PDO::FETCH_ASSOC);
+		$token = new Token();
+		$account = new Account();
+		if(gettype($donnees) == "array"){
+			$token->hydrate($donnees);
+		}else{
+			throw new Exception("NoSuchAccount");
+		}
+		return $token->getUsername();
+	}
+
 	public function getAccountByToken(string $token):Account{
 		$q = $this->execRequest('SELECT * FROM session WHERE Token=?', [$token]);
 		$donnees = $q->fetch(PDO::FETCH_ASSOC);

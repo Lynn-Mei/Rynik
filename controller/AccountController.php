@@ -11,7 +11,7 @@ class AccountController{
 	
 	public function displayLogIn():void {
 		$indexView = new View('LogIn');
-		$indexView->generer([]);
+		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function LogIn(string $login, string $password):void{
@@ -32,12 +32,12 @@ class AccountController{
 		}}else{
 			$indexView = new View('Index');
 		}
-		$indexView->generer([]);
+		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function displaySignIn():void {
 		$indexView = new View('SignIn');
-		$indexView->generer([]);
+		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function SignIn(string $login,string $email,string $password):void{
@@ -55,7 +55,7 @@ class AccountController{
 				$this->GenerateSession($login);
 			}
 		}
-		$indexView->generer([]);
+		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function LogOut():void {
@@ -64,12 +64,11 @@ class AccountController{
 			$tokenManager = new TokenManager();
 			$tokenManager->deleteToken($_SESSION['token']);
 			$indexView = new View('Index');
-			$indexView->generer([]);
+			$indexView->generer([$this->getLoggedIn()]);
 		}
 	}
 
 	public function CheckTokenExists(string $token):bool{
-		
 		$tokenManager = new TokenManager();
 		$res = true;
 		try{
@@ -82,7 +81,6 @@ class AccountController{
 	}
 
 	private function GenerateSession(string $username){
-			
 		$stringSpace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$stringLength = strlen($stringSpace);
 		$randomString = '';
@@ -95,6 +93,18 @@ class AccountController{
 		$tokenManager->createToken([$_SESSION["token"],$date->format('Y-m-d H:i:s'),$username]);
 	}
 	
+	public function getLoggedIn():Account|null{
+	$account = null;	
+	if(isset($_SESSION['token'])){
+			$tokenManager = new TokenManager();
+			$accountManager = new AccountManager();
+			try{
+				$account = $accountManager->getById($tokenManager->getAccountName($_SESSION['token']));
+			}catch(Exception $e){
+			}
+		}
+		return $account;
+	}
 	
 }
 

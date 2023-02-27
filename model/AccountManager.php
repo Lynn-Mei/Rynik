@@ -42,12 +42,6 @@ class AccountManager extends Model
 		}
 		return $account;
 	}
-
-	public function getToken():string{
-		return "Hey hey, I am a token";
-	}
-
-
 }
 
 ?>
