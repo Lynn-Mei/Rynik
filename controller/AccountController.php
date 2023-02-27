@@ -60,8 +60,12 @@ class AccountController{
 
 	public function LogOut():void {
 		session_reset();
-		$indexView = new View('Index');
-		$indexView->generer([]);
+		if(isset($_SESSION['token'])){
+			$tokenManager = new TokenManager();
+			$tokenManager->deleteToken($_SESSION['token']);
+			$indexView = new View('Index');
+			$indexView->generer([]);
+		}
 	}
 
 	public function CheckTokenExists(string $token):bool{

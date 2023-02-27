@@ -33,7 +33,4 @@ if(isset($_GET['action'])){
 else{
 	$route->displayIndex();
 }
-
-
-
 ?>
