@@ -1,136 +1,172 @@
-html,body
-{
-	/*background-image: url("http://localhost:345/Valkiryn2/Valkiryn/images/night.jpg");*/
-	background-color: white;
-	height: 100%;
-	overflow-x:hidden;
+	@font-face {
+		font-family: Ebihara;
+		src: url(../files/EbiharaNoKuseji.ttf);
+	}
+
+	h1 {
+		font-size: 3em;
+		text-align: center;
+	}
+
+	body {
+		background-color: #f8f9fa;
+		margin: 0;
+		padding: 0;
+		font-family: Ebihara;
+	}
+
+	#title {
+		background-color: #f8f9fa;
+		height: 7em;
+		width: 100%;
+		position: absolute;
+		top: 0px;
+	}
+
+	#toolbar {
+		background-color: #424040;
+		height: 3.5em;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		color: #f8f9fa;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+
+	#toolbar a {
+		display: inline-block;
+		height: 100%;
+		color: #f8f9fa;
+		text-decoration: none;
+		list-style-type: none;
+	}
+
+	#toolbar li {
+		display: inline-block;
+		padding-left: 1.5em;
+		height: 100%;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 	
-}
-
-main
-{
-	height: 99%;
-	margin-left:15%;
-	margin-right:15%;
-	background-color: lightgrey;
-}
-
-h1
-{
-	position: absolute;
-	left: 5%;
-	top:0%;
-	color: white;
-	z-index: 250;
-}
-
-form.not(#add-pp)
-{
-	position: absolute;
-	top: 30%;
-	left:33%;
-	width: 30%;
-}
-
-#add-pp{
-	position: absolute;
-	top: 80%;
-	left: 25%;
-	width: 30%;
+	}
 	
-}
+	#toolbar a:first-of-type {
+		margin-left: 8em;
+	}
 
-#content-1{
-	position: absolute;
-	top:30%;
-	left: 25%;
-}
+	li a {
+		height: 100%;
+		text-decoration: none;
+		color: #f8f9fa;
+	}
 
-fieldset
-{
-	background-color: rgba(255, 255, 255, .5);;
-}
+	#toolbar li:hover {
+		transition-duration: 0.6s;
+		background-color: #f8f9fa;
+		color: #333333;
+	}
 
-nav{
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	background-color: #5a5255;
-	height: 5em;
-}
+	main {
+		/*background-color: cornflowerblue;*/
+		position: relative;
+		top: 3em;
+
+	}
+
+	.display-div {
+		margin-top: 2em;
+		background-color: #333333;
+		display: inline-block;
+		width: 32em;
+		height: 35em;
+		margin-left: 1em;
+	}
+
+	.display-div:first-of-type {
+		margin-left: 15em;
+		margin-right: 2em;
+	}
+
+	.display-div h2 {
+		text-align: center;
+		background-color: #333333;
+		position: relative;
+		top: -0.85em;
+		height: 2em;
+		color: #f8f9fa;
+	}
+
+	.display-box {
+		vertical-align: top;
+		background-color: #f8f9fa;
+		height: 15em;
+		width: 15em;
+		display: inline-block;
+		position: relative;
+		top: -1.7em;
+		margin-top: 0.5em;
+		margin-left: 0.5em;
+	}
+
+	footer {
+		background-color: #424040;
+		position: absolute;
+		left: 0px;
+		bottom: -100%;
+		width: 100%;
+		color: #f8f9fa;
+		text-align: center;
+	}
+
+	#layer1{
+		background-color: #333333;
+	}
+	#layer1 img{
+		height: 30em;
+		margin-left: 5em;
+	}
+		#layer1 *{
+			display: inline;
+			color: #f8f9fa;
+		}
+
+		#layer1 h2 {
+			position: absolute;
+			top: 0em;
+			margin-left: 5em;
+			font-size: 3em;
+		}
+
+		#layer1 p {
+			position: absolute;
+			top: 5em;
+			margin-left: 0.5em;
+			font-size: 1.2em;
+		}
+
+		#layer1 .btn {
+			position: absolute;
+			top: 13em;
+			left: 50%;
+			width: 12em;
+			height: 3.2em;
+			color: black;
+			background-color: #f8f9fa;
+			border-radius: 20em;
+			text-align: center;
+		}
 
 
-/*nav pages*/
-#nav-pages
-{
-	position: relative;
-	left: 30%;
-	top: -25%;
-	height: 5em;
-}
+		form {
+			position: absolute;
+			top: 20%;
+		}
 
-#nav-pages li
-{
-	display: inline;
-	width: 5em;
-}
+			#layer1 .btn:hover {
+				transition-duration: 0.6s;
+				background-color: #d9cee4;
+				color: black;
+				font-weight: bold;
+			}
 
-#nav-pages a
-{
-	color: white;
-	padding-bottom: 2em;
-	text-decoration: none;
-	padding-left: 1.7em;
-	background-color: #5a5255;
-	font-weight: bold;
-	font-size: 1.5em;
-}
-
-#nav-pages a:hover
-{
-	background-color: white;
-	color: #5a5255;
-}
-
-/* nav account details */
-#nav-account-details
-{
-	position: relative;
-	top: -140%;
-	left:85%;
-	height: 5em;
-}
-
-#nav-account-details li
-{
-	display: inline;
-	
-}
-
-#nav-account-details img
-{
-	height: 75%;
-	width: 4.5%;	
-}
-
-#nav-account-details li{
-	display: inline;
-}
-
-#nav-profile-box-div
-{
-	display: none;
-	background-color: white;
-	border: solid 1px black;
-	width:20%;
-	
-	position: absolute;
-	top: 5em;
-	right:0px;
-}
-
-form {
-	position: absolute;
-	top: 20%;
-}

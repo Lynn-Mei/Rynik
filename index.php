@@ -8,7 +8,6 @@ $accountRoute = new AccountController();
 
 if(isset($_GET['action'])){
 	$action = $_GET['action'];
-	
 	if($action == 'log-in'){	
 		if (isset($_POST['login']) && isset($_POST['password'])){
 			$accountRoute->LogIn($_POST['login'],$_POST['password']);
@@ -18,7 +17,7 @@ if(isset($_GET['action'])){
 		}
 	}
 
-	if($action == 'sign-in'){
+	else if($action == 'sign-in'){
 		if (isset($_POST['username']) && isset($_POST['password'])){
 			$accountRoute->SignIn($_POST['username'],$_POST['email'],$_POST['password']);
 		}
@@ -26,8 +25,14 @@ if(isset($_GET['action'])){
 			$accountRoute->displaySignIn();
 		}
 	}
-	if($action == 'log-out'){
+	else if($action == 'log-out'){
 		$accountRoute->LogOut();
+	}
+	else if($action == 'cgu'){
+		$route->displayCGU();				
+	}
+	else{
+		$route->displayNotFound();
 	}
 }
 else{
