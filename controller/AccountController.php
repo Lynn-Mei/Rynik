@@ -11,11 +11,13 @@ class AccountController{
 	
 	public function displayLogIn():void {
 		$indexView = new View('LogIn');
+		$indexView->applyStyle('account');
 		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function LogIn(string $login, string $password):void{
 		$indexView = new View('LogIn');
+		$indexView->applyStyle('account');
 		//si l'utilisateur n'est pas deja connecte
 		if(isset($_SESSION["token"])){
 			$tokenManager = new TokenManager();
@@ -36,18 +38,20 @@ class AccountController{
 			echo "<p class='success'>You are connected.</p>";
 		}else{
 			echo "<p class='error'>Your password is incorrect.</p>";
-			$indexView = new View('Index');
+			$indexView = new View('LogIn');
 		}
 		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function displaySignIn():void {
 		$indexView = new View('SignIn');
+		$indexView->applyStyle('account');
 		$indexView->generer([$this->getLoggedIn()]);
 	}
 
 	public function SignIn(string $login,string $email,string $password):void{
 		$indexView = new View('SignIn');
+		$indexView->applyStyle('account');
 		$accountManager = new AccountManager();
 		try{
 			$account = $accountManager->GetById($login);
@@ -65,10 +69,11 @@ class AccountController{
 	}
 
 	public function LogOut():void {
-		session_reset();
 		if(isset($_SESSION['token'])){
 			$tokenManager = new TokenManager();
 			$tokenManager->deleteToken($_SESSION['token']);
+			session_destroy();
+			session_start();
 			$indexView = new View('Index');
 			$indexView->generer([$this->getLoggedIn()]);
 		}

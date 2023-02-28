@@ -23,12 +23,8 @@
 		<a href='index.php'><li>Cuisine</li></a>
 		<a href='index.php'><li>Sports</li></a>
 		<?php
-			if(isset($_SESSION['rank']))
+			if(isset($_SESSION['token']))
 			{
-				if($_SESSION['rank']==2)
-				{
-					echo "<a href='index.php'><li>Admin board</li></a>";
-				}
 				echo "<a href='index.php?action=log-out'><li>Log Out</li></a>";
 
 			}
