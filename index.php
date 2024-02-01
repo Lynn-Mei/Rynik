@@ -31,6 +31,9 @@ if(isset($_GET['action'])){
 	else if($action == 'cgu'){
 		$route->displayCGU();				
 	}
+	else if($action == "account"){
+		$accountRoute->displayAccount();
+	}
 	else{
 		$route->displayNotFound();
 	}

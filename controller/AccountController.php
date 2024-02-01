@@ -33,6 +33,7 @@ class AccountController{
 		$account = $accountManager->getByID($login);
 		if($account->getHashPassword() == hash ("sha256", $password )){
 			$this->GenerateSession($login);
+			$_SESSION["account"] = $account;
 			//On retourne sur main
 			$indexView = new View('Index');
 			echo "<p class='success'>You are connected.</p>";
@@ -115,6 +116,13 @@ class AccountController{
 			}
 		}
 		return $account;
+	}
+
+	public function displayAccount():void{
+		$indexView = new View('Account');
+		//$indexView->applyStyle('accountPage');
+		$accountManager = new AccountManager();
+		$indexView->generer([$this->getLoggedIn()]);
 	}
 	
 }

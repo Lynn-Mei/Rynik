@@ -5,7 +5,8 @@ class Account{
 private string $username  = "";
 private string $hashPassword = "";
 private int $rank;
-private ?string $profilPicLink;
+private string $profilPicLink = "";
+private string $email = "mururoa.lynn@sezamail.net";
 
 function __construct(){
 
@@ -17,6 +18,14 @@ public function getUsername():string{
 
 public function setUsername(string $usname){
 	$this->username = $usname;
+}
+
+public function getEmail():string{
+	return $this->email;
+}
+
+public function setEmail(string $email){
+	$this->email = $email;
 }
 
 public function getHashPassword():string{
