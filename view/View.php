@@ -31,6 +31,18 @@ class View {
 	function applyStyle(string $name):void{
 		array_push($this->stylesheets, $name);
 	}
+
+	private function addReusable(string $fichier, array $donnees){
+		$fichier = $fichier . ".php";
+		if (file_exists($fichier)){
+			extract($donnees);
+			ob_start();
+			require $fichier;
+		}
+		else{
+			throw new Exception("Fichier '$fichier' introuvable");
+		}
+	}
 	
 	private function genererFichier(string $fichier, array $donnees){
 		if (file_exists($fichier)){

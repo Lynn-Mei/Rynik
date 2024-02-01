@@ -10,18 +10,17 @@
 <body>
 	<header>
 		<div id="title">
-			<h1>Hakumei-Hime</h1>
+			<h1>Sezalang</h1>
 		</div>
 
 	</header>
 	</br></br></br></br>
 	<ul id="toolbar">
 		<a href='index.php'><li>Home</li></a>
-		<a href='index.php'><li>Categories</li></a>
-		<a href='index.php'><li>Translator</li></a>
-		<a href='index.php'><li>Language</li></a>
-		<a href='index.php'><li>Cuisine</li></a>
-		<a href='index.php'><li>Sports</li></a>
+		<a href='index.php'><li>Lessons</li></a>
+		<a href='index.php'><li>Dictionary</li></a>
+		<a href='index.php'><li>Practice</li></a>
+		<a href='index.php'><li>Hey</li></a>
 		<?php
 			if(isset($_SESSION['token']))
 			{
@@ -34,6 +33,15 @@
 					echo "<a href='index.php?action=sign-in'><li>Sign In</li></a>";
 			}
 		?>
+		<div>
+			<?php
+				if(isset($_SESSION['account']))
+				{
+					$hey = ["path"=>$_SESSION['account']->getProfilPicLink()];
+					$this->addReusable("reusable/profilePicture", $hey);
+				}
+			?>
+		</div>
 	</ul>
 	<main>
 		<?= $contenu; ?>
