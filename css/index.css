@@ -48,7 +48,14 @@
 		height: 100%;
 		padding-left: 0.5em;
 		padding-right: 0.5em;
-	
+	}
+
+	#toolbar div{
+		display: inline-block;
+		margin-left: 10em;
+		height: 100%;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 	}
 	
 	#toolbar a:first-of-type {
@@ -169,4 +176,9 @@
 				color: black;
 				font-weight: bold;
 			}
+
+.profile-pic img{
+	width: 3.5rem;
+	height: 3.5rem;
+}
 
